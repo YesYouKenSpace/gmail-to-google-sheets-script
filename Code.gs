@@ -3,12 +3,12 @@
 
 // Add here your search query. Do your search on gmail first, copy and paste the search terms here
 // Samples: "label: hiring-process", "to: sales@mycompany.com"
-var SEARCH_QUERY = 'label: hiring-process';
+var SEARCH_QUERY = 'in: inbox';
 // If you want each email address just once on sheet, set to true
-var AVOID_REPEATED_ADDRESS = true;
+var AVOID_REPEATED_ADDRESS = false;
 
 // Main function, the one that you must select before run
-function saveEmails() {
+function importEmails() {
     console.log("Clearing sheet...");
     SpreadsheetApp.getActiveSheet().clear();  
   
@@ -76,5 +76,3 @@ function appendData(line, array2d) {
   var sheet = SpreadsheetApp.getActiveSheet();
   sheet.getRange(line, 1, array2d.length, array2d[0].length).setValues(array2d);
 }
-
-
